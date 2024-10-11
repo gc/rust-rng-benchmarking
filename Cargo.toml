@@ -1,0 +1,32 @@
+[package]
+name = "rust-rng-bench"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+fastrand = "2.1.1"
+rand = { version = "0.9.0-alpha.2", features = [
+    "simd_support",
+    "small_rng",
+    "nightly",
+] }
+rand_xorshift = "0.3.0"
+rand_core = "0.6.4"
+rand_pcg = "0.3.1"
+csv = "1.3.0"
+
+[[bin]]
+name = "pcg"
+path = "src/pcg.rs"
+
+[[bin]]
+name = "xorshift"
+path = "src/xorshift.rs"
+
+[[bin]]
+name = "smallrng"
+path = "src/smallrng.rs"
+
+[[bin]]
+name = "fastrand"
+path = "src/fastrand.rs"
